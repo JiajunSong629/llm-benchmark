@@ -8,6 +8,8 @@ from transformers import (
 )
 import torch
 from tqdm import tqdm
+from utils import create_folder
+from config import GSM_SYMBOLIC_MODELS
 
 
 class KeywordStoppingCriteria(StoppingCriteria):
@@ -67,15 +69,32 @@ def format_prompt(shot_examples, new_question):
     return prompt
 
 
-def generate_response(model, tokenizer, prompt, max_new_tokens=512):
+def generate_response(model, tokenizer, prompt, apply_chat_template=False):
     """Generate a response using the model."""
-    inputs = tokenizer(prompt, return_tensors="pt")
+    if apply_chat_template:
+        messages = [
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ]
+        inputs = tokenizer.apply_chat_template(
+            messages,
+            add_generation_prompt=True,
+            padding=True,
+            truncation=True,
+            return_tensors="pt",
+            return_dict=True,
+            tokenize=True,
+        )
+    else:
+        inputs = tokenizer(prompt, return_tensors="pt")
 
     # Generate response
     with torch.no_grad():
         outputs = model.generate(
             inputs["input_ids"].to(model.device),
-            max_new_tokens=max_new_tokens,
+            max_new_tokens=1000,
             pad_token_id=tokenizer.eos_token_id,
             eos_token_id=tokenizer.eos_token_id,
             stopping_criteria=[
@@ -98,34 +117,39 @@ def generate_response(model, tokenizer, prompt, max_new_tokens=512):
     return answer
 
 
-def main(num_questions=100, num_variants=5):
+def main(
+    model_id,
+    apply_chat_template,
+    num_questions,
+    num_variants,
+):
     seed = 42
     random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
 
+    model_name = GSM_SYMBOLIC_MODELS[model_id]
     model = AutoModelForCausalLM.from_pretrained(
-        "google/gemma-2-9b-it", torch_dtype=torch.bfloat16, device_map="cuda"
+        model_name, torch_dtype=torch.bfloat16, device_map="cuda"
     )
-    tokenizer = AutoTokenizer.from_pretrained("google/gemma-2-9b-it")
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     few_shot_examples = load_few_shot_examples()
-
     examples = load_examples()
     grouped_examples = group_examples_by_original_id(examples)
     all_original_ids = random.sample(list(grouped_examples.keys()), num_questions)
 
     all_results = {}
-
     for question_id in tqdm(all_original_ids):
         questions_variants = random.sample(grouped_examples[question_id], num_variants)
         original_question = grouped_examples[question_id][0]
 
         # First generate response for the original question
         prompt = format_prompt(few_shot_examples, original_question["question"])
-        response = generate_response(model, tokenizer, prompt)
+        response = generate_response(model, tokenizer, prompt, apply_chat_template)
         results = [
             {
+                "prompt": prompt,
                 "new_question": original_question["question"],
                 "new_question_answer": original_question["answer"],
                 "response": response,
@@ -138,6 +162,7 @@ def main(num_questions=100, num_variants=5):
             response = generate_response(model, tokenizer, prompt)
             results.append(
                 {
+                    # "prompt": prompt,
                     "new_question": new_question["question"],
                     "new_question_answer": new_question["answer"],
                     "response": response,
@@ -150,14 +175,15 @@ def main(num_questions=100, num_variants=5):
 
 
 if __name__ == "__main__":
-    import os
-
-    os.makedirs("gsm_symbolic_results", exist_ok=True)
+    create_folder("results/gsm_symbolic_results")
 
     num_questions = 100
     num_variants = 50
-    res = main(num_questions, num_variants)
-    with open(
-        f"gsm_symbolic_results/results_nq{num_questions}_nv{num_variants}.json", "w"
-    ) as f:
-        json.dump(res, f, indent=4, ensure_ascii=False)
+    for model_id in GSM_SYMBOLIC_MODELS:
+        apply_chat_template = model_id in ["qwen_1_5B_it", "gemma_9B_it"]
+        res = main(model_id, apply_chat_template, num_questions, num_variants)
+        with open(
+            f"results/gsm_symbolic_results/{model_id}_nq{num_questions}_nv{num_variants}.json",
+            "w",
+        ) as f:
+            json.dump(res, f, indent=4, ensure_ascii=False)
