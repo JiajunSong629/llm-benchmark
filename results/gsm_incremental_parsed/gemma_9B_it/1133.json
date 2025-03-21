@@ -1,0 +1,64 @@
+[
+    {
+        "id": "dist1234",
+        "name": "total_distance",
+        "value": 24.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "dist5678",
+        "name": "distance_beach",
+        "value": 12.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "dist9abc",
+        "name": "distance_sidewalk",
+        "value": 12.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time1234",
+        "name": "time_beach",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time5678",
+        "name": "time_sidewalk",
+        "value": 30.0,
+        "operation": "/",
+        "operands": [
+            "time1234",
+            "const1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "const1234",
+        "name": "constant_2",
+        "value": 2.0,
+        "operation": null,
+        "operands": [],
+        "is_leaf": true
+    },
+    {
+        "id": "total123",
+        "name": "total_time",
+        "value": 90.0,
+        "operation": "+",
+        "operands": [
+            "time1234",
+            "time5678"
+        ],
+        "is_leaf": false
+    }
+]

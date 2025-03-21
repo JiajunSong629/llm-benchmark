@@ -1,0 +1,154 @@
+[
+    {
+        "id": "totl5678",
+        "name": "total_questions",
+        "value": 150.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hist1234",
+        "name": "history_percentage",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "miah5678",
+        "name": "mia_history_percentage",
+        "value": 40.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "litc1234",
+        "name": "literature_chemistry_fraction",
+        "value": 0.1,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc9abc",
+        "name": "history_questions",
+        "value": 0,
+        "operation": "multiplication",
+        "operands": [
+            "totl5678",
+            "hist1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc1234",
+        "name": "history_questions_calculation",
+        "value": 90.0,
+        "operation": "multiplication",
+        "operands": [
+            "totl5678",
+            "hist1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "miah1234",
+        "name": "mia_history_points",
+        "value": 0.0,
+        "operation": "multiplication",
+        "operands": [
+            "calc1234",
+            "miah5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "hist1234",
+        "name": "history_questions_right",
+        "value": 36.0,
+        "operation": "multiplication",
+        "operands": [
+            "calc1234",
+            "miah5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "remn5678",
+        "name": "remaining_questions",
+        "value": 60.0,
+        "operation": "subtraction",
+        "operands": [
+            "totl5678",
+            "calc1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "split9abc",
+        "name": "split_questions",
+        "value": 30.0,
+        "operation": "division",
+        "operands": [
+            "remn5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "mia12345",
+        "name": "mia_literature_chemistry_points",
+        "value": 0.0,
+        "operation": "multiplication",
+        "operands": [
+            "split9abc",
+            "litc1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "litr9abc",
+        "name": "literature_questions_right",
+        "value": 3.0,
+        "operation": "multiplication",
+        "operands": [
+            "split9abc",
+            "litc1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "chem9abc",
+        "name": "chemistry_questions_right",
+        "value": 3.0,
+        "operation": "multiplication",
+        "operands": [
+            "split9abc",
+            "litc1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "totl6abc",
+        "name": "total_literature_chemistry_right",
+        "value": 6.0,
+        "operation": "addition",
+        "operands": [
+            "litr9abc",
+            "chem9abc"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "totl9abc",
+        "name": "total_questions_right",
+        "value": 42.0,
+        "operation": "addition",
+        "operands": [
+            "hist1234",
+            "totl6abc"
+        ],
+        "is_leaf": false
+    }
+]

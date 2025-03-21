@@ -1,0 +1,59 @@
+[
+    {
+        "id": "ratio1234",
+        "name": "sugar_water_ratio",
+        "value": 97.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "ratio5678",
+        "name": "water_sugar_ratio",
+        "value": 37.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totl9012",
+        "name": "total_volume",
+        "value": 1474.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "sum12345",
+        "name": "total_ratio_parts",
+        "value": 134.0,
+        "operation": "+",
+        "operands": [
+            "ratio1234",
+            "ratio5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc1234",
+        "name": "teaspoons_per_part",
+        "value": 11.0,
+        "operation": "/",
+        "operands": [
+            "totl9012",
+            "sum12345"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "sugar123",
+        "name": "teaspoons_of_sugar",
+        "value": 1067.0,
+        "operation": "*",
+        "operands": [
+            "ratio1234",
+            "calc1234"
+        ],
+        "is_leaf": false
+    }
+]

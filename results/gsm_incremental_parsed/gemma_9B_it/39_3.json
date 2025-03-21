@@ -1,0 +1,95 @@
+[
+    {
+        "id": "skip1234",
+        "name": "skip_speed",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time5678",
+        "name": "total_time",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "run5678",
+        "name": "run_speed",
+        "value": 4.0,
+        "operation": "multiply",
+        "operands": [
+            "skip1234",
+            "skip1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "walk1234",
+        "name": "walk_speed",
+        "value": 1.0,
+        "operation": "divide",
+        "operands": [
+            "skip1234",
+            "skip1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "time1234",
+        "name": "run_time",
+        "value": 4.0,
+        "operation": "divide",
+        "operands": [
+            "time5678",
+            "time5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "time5678",
+        "name": "walk_time",
+        "value": 4.0,
+        "operation": "divide",
+        "operands": [
+            "time5678",
+            "time5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "run1234",
+        "name": "run_distance",
+        "value": 16.0,
+        "operation": "multiply",
+        "operands": [
+            "run5678",
+            "time1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "walk1234",
+        "name": "walk_distance",
+        "value": 4.0,
+        "operation": "multiply",
+        "operands": [
+            "walk1234",
+            "time5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "total123",
+        "name": "total_distance",
+        "value": 20.0,
+        "operation": "add",
+        "operands": [
+            "run1234",
+            "walk1234"
+        ],
+        "is_leaf": false
+    }
+]

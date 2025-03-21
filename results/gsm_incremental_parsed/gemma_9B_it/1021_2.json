@@ -1,0 +1,167 @@
+[
+    {
+        "id": "totalq1",
+        "name": "total_questions",
+        "value": 20.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "chemper1",
+        "name": "chemistry_percentage",
+        "value": 20.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "chemcor1",
+        "name": "chemistry_correct_percentage",
+        "value": 75.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algcor1",
+        "name": "algebra_correct_percentage",
+        "value": 50.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "phscor1",
+        "name": "physics_correct_percentage",
+        "value": 50.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "chemq123",
+        "name": "chemistry_questions",
+        "value": 20.0,
+        "operation": "*",
+        "operands": [
+            "totalq1",
+            "chemper1"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "chemq456",
+        "name": "chemistry_questions",
+        "value": 4.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "chem7890",
+        "name": "chemistry_correct_questions",
+        "value": 4.0,
+        "operation": "*",
+        "operands": [
+            "chemq456",
+            "chemcor1"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "chem7891",
+        "name": "chemistry_correct_questions",
+        "value": 3.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "remq1234",
+        "name": "remaining_questions",
+        "value": 16.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "split123",
+        "name": "split_remaining_questions",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algq1234",
+        "name": "algebra_questions",
+        "value": 8.0,
+        "operation": "/",
+        "operands": [
+            "remq1234",
+            "split123"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "phys1234",
+        "name": "physics_questions",
+        "value": 8.0,
+        "operation": "/",
+        "operands": [
+            "remq1234",
+            "split123"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "algcor2",
+        "name": "algebra_correct_questions",
+        "value": 8.0,
+        "operation": "*",
+        "operands": [
+            "algq1234",
+            "algcor1"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "algcor3",
+        "name": "algebra_correct_questions",
+        "value": 0.0,
+        "operation": "*",
+        "operands": [
+            "algcor2",
+            "algcor1"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "algcor4",
+        "name": "algebra_correct_questions",
+        "value": 4.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "phscor2",
+        "name": "physics_correct_questions",
+        "value": 1.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totalcor1",
+        "name": "total_correct_questions",
+        "value": 7.0,
+        "operation": "+",
+        "operands": [
+            "chem7891",
+            "algcor4"
+        ],
+        "is_leaf": false
+    }
+]

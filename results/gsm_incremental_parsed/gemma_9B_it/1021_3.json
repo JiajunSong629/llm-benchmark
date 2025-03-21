@@ -1,0 +1,170 @@
+[
+    {
+        "id": "totl5678",
+        "name": "total_questions",
+        "value": 50.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "geog1234",
+        "name": "geography_percent",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "kimia567",
+        "name": "geography_correct_percent",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algch123",
+        "name": "algebra_chemistry_correct_fraction",
+        "value": 0.1111111111111111,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "newd1234",
+        "name": "geography_questions",
+        "value": 50.0,
+        "operation": "*",
+        "operands": [
+            "totl5678",
+            "geog1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "geogq123",
+        "name": "geography_questions",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "kimgeo12",
+        "name": "geography_correct",
+        "value": 5.0,
+        "operation": "*",
+        "operands": [
+            "geogq123",
+            "kimia567"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "geogq456",
+        "name": "geography_questions",
+        "value": 3.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "remq1234",
+        "name": "remaining_questions",
+        "value": 45.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algchq12",
+        "name": "algebra_chemistry_questions",
+        "value": 22.0,
+        "operation": "/",
+        "operands": [
+            "remq1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "algq1234",
+        "name": "algebra_questions",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "chem1234",
+        "name": "chemistry_questions",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algchq22",
+        "name": "algebra_chemistry_questions",
+        "value": 22.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algchq22",
+        "name": "algebra_chemistry_questions",
+        "value": 22.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algch123",
+        "name": "algebra_chemistry_correct_fraction",
+        "value": 0.1111111111111111,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "algcr123",
+        "name": "algebra_chemistry_correct",
+        "value": 2.0,
+        "operation": "*",
+        "operands": [
+            "algchq22",
+            "algch123"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "totalq12",
+        "name": "total_questions_right",
+        "value": 44.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "round123",
+        "name": "rounded_questions",
+        "value": 2.0,
+        "operation": "round_down",
+        "operands": [
+            "algcr123"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "totalq13",
+        "name": "total_questions_right",
+        "value": 5.0,
+        "operation": "+",
+        "operands": [
+            "geogq456",
+            "algcr123"
+        ],
+        "is_leaf": false
+    }
+]

@@ -1,0 +1,79 @@
+[
+    {
+        "id": "sell1234",
+        "name": "selling_price",
+        "value": 610000.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "tfee5678",
+        "name": "transfer_fee_rate",
+        "value": 0.03,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "bfee9012",
+        "name": "brokerage_fee_rate",
+        "value": 0.05,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "loan3456",
+        "name": "loan_amount",
+        "value": 480000.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "tfcalc12",
+        "name": "transfer_fee",
+        "value": 18300.0,
+        "operation": "multiply",
+        "operands": [
+            "sell1234",
+            "tfee5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "bfcalc78",
+        "name": "brokerage_fee",
+        "value": 30500.0,
+        "operation": "multiply",
+        "operands": [
+            "sell1234",
+            "bfee9012"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "expense01",
+        "name": "total_expenses",
+        "value": 533800.0,
+        "operation": "add",
+        "operands": [
+            "tfcalc12",
+            "bfcalc78",
+            "loan3456"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "netpro12",
+        "name": "net_proceeds",
+        "value": 76200.0,
+        "operation": "subtract",
+        "operands": [
+            "sell1234",
+            "expense01"
+        ],
+        "is_leaf": false
+    }
+]

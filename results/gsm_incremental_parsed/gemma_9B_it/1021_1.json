@@ -1,0 +1,179 @@
+[
+    {
+        "id": "totl5678",
+        "name": "total_questions",
+        "value": 50.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "perc1234",
+        "name": "geography_percent",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "rate5678",
+        "name": "geography_correct_rate",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "frac1234",
+        "name": "algebra_chemistry_correct_fraction",
+        "value": 0.1111111111111111,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc1234",
+        "name": "geography_questions",
+        "value": 50.0,
+        "operation": "*",
+        "operands": [
+            "totl5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "step9abc",
+        "name": "geography_questions_factor",
+        "value": 0.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "geog1234",
+        "name": "geography_questions",
+        "value": 5.0,
+        "operation": null,
+        "operands": [],
+        "is_leaf": true
+    },
+    {
+        "id": "geog5678",
+        "name": "geography_correct_questions",
+        "value": 5.0,
+        "operation": "*",
+        "operands": [
+            "geog1234",
+            "step9abc"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "geog9876",
+        "name": "geography_correct_questions",
+        "value": 3.0,
+        "operation": null,
+        "operands": [],
+        "is_leaf": true
+    },
+    {
+        "id": "remn1234",
+        "name": "remaining_questions",
+        "value": 45.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "divd5678",
+        "name": "divided_questions",
+        "value": 22.0,
+        "operation": "/",
+        "operands": [
+            "remn1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "quest123",
+        "name": "algebra_questions",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "chem4567",
+        "name": "chemistry_questions",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "divd5678",
+        "name": "divided_questions",
+        "value": 22.0,
+        "operation": "floor",
+        "operands": [
+            "divd5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "alge1234",
+        "name": "algebra_correct_questions",
+        "value": 2.0,
+        "operation": "*",
+        "operands": [
+            "divd5678",
+            "frac1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "corr1234",
+        "name": "correct_questions",
+        "value": 44.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "alge5678",
+        "name": "algebra_correct_questions_rounded",
+        "value": 2.0,
+        "operation": "floor",
+        "operands": [
+            "alge1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "totl7890",
+        "name": "geography_correct_questions",
+        "value": 3.0,
+        "operation": null,
+        "operands": [],
+        "is_leaf": true
+    },
+    {
+        "id": "alge7890",
+        "name": "algebra_correct_questions_rounded",
+        "value": 2.0,
+        "operation": null,
+        "operands": [],
+        "is_leaf": true
+    },
+    {
+        "id": "summ1234",
+        "name": "total_correct_questions",
+        "value": 5.0,
+        "operation": "+",
+        "operands": [
+            "totl7890",
+            "alge7890"
+        ],
+        "is_leaf": false
+    }
+]

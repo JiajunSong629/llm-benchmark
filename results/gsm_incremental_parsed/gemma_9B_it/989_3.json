@@ -1,0 +1,155 @@
+[
+    {
+        "id": "rate1234",
+        "name": "peeling_rate",
+        "value": 4.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "carr5678",
+        "name": "carrots_sauteed",
+        "value": 30.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time9012",
+        "name": "time_saute",
+        "value": 18.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totl3456",
+        "name": "total_carrots",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calcd1e2",
+        "name": "carrots_peeled_in_18_minutes",
+        "value": 72.0,
+        "operation": "multiplication",
+        "operands": [
+            "rate1234",
+            "time9012"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "addn1a2b",
+        "name": "carrots_peeled_and_sauteed",
+        "value": 102.0,
+        "operation": "addition",
+        "operands": [
+            "carr5678",
+            "calcd1e2"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "less5678",
+        "name": "time_less_than_18_minutes",
+        "value": 18.0,
+        "operation": "less_than",
+        "operands": [
+            "time9012"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "divd1e2f",
+        "name": "time_to_prepare_carrots",
+        "value": null,
+        "operation": "division",
+        "operands": [
+            "totl3456",
+            "addn1a2b"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "rate1a2b",
+        "name": "carrots_per_minute",
+        "value": 67.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc3c4d",
+        "name": "carrots_prepared",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time5e6f",
+        "name": "time_in_minutes",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "divd7g8h",
+        "name": "carrots_per_minute_calculation",
+        "value": null,
+        "operation": "division",
+        "operands": [
+            "calc3c4d",
+            "time5e6f"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "rate1a2b",
+        "name": "carrots_per_minute",
+        "value": 67.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "divd7g8h",
+        "name": "carrots_per_minute_calculation",
+        "value": 10.0,
+        "operation": "division",
+        "operands": [
+            "calc3c4d",
+            "time5e6f"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "time1a2b",
+        "name": "total_time",
+        "value": 58.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time1a2b",
+        "name": "total_time",
+        "value": 58.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time1a2b",
+        "name": "total_time",
+        "value": 58.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    }
+]

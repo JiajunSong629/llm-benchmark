@@ -1,0 +1,135 @@
+[
+    {
+        "id": "skiprate",
+        "name": "skip_speed",
+        "value": 3.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totltime",
+        "name": "total_time",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "runrate1",
+        "name": "run_speed",
+        "value": 4.0,
+        "operation": "*",
+        "operands": [
+            "skiprate",
+            "frac1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "frac1234",
+        "name": "fraction",
+        "value": 0.75,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "walkrat1",
+        "name": "walk_speed",
+        "value": 4.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "walkrat2",
+        "name": "walk_speed_calculated",
+        "value": 0.5,
+        "operation": "/",
+        "operands": [
+            "walkrat1",
+            "totltime"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "mph5miles",
+        "name": "speed_in_mph",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "timecalc1",
+        "name": "run_time",
+        "value": 4.0,
+        "operation": "/",
+        "operands": [
+            "totltime",
+            "timecalc2"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "timecalc2",
+        "name": "half_time",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "timecalc3",
+        "name": "walk_time",
+        "value": 4.0,
+        "operation": "/",
+        "operands": [
+            "totltime",
+            "timecalc2"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "runmil1",
+        "name": "run_miles",
+        "value": 16.0,
+        "operation": "*",
+        "operands": [
+            "runrate1",
+            "timecalc1"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "walkmil1",
+        "name": "walk_miles",
+        "value": 0.0,
+        "operation": "*",
+        "operands": [
+            "walkrat1",
+            "timecalc3"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "miles123",
+        "name": "deduced_miles",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "total123",
+        "name": "total_miles",
+        "value": 18.0,
+        "operation": "+",
+        "operands": [
+            "runmil1",
+            "miles123"
+        ],
+        "is_leaf": false
+    }
+]

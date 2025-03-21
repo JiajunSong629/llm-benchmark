@@ -1,0 +1,79 @@
+[
+    {
+        "id": "sell1234",
+        "name": "selling_price",
+        "value": 880000.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "regi5678",
+        "name": "registration_fee_rate",
+        "value": 0.03,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "agen9012",
+        "name": "agent_fee_rate",
+        "value": 0.05,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "loan3456",
+        "name": "loan_amount",
+        "value": 440000.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc2640",
+        "name": "registration_fees",
+        "value": 26400.0,
+        "operation": "multiplication",
+        "operands": [
+            "sell1234",
+            "regi5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "agent8901",
+        "name": "agent_fee",
+        "value": 44000.0,
+        "operation": "multiplication",
+        "operands": [
+            "sell1234",
+            "agen9012"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "total123",
+        "name": "total_expenses",
+        "value": 510400.0,
+        "operation": "addition",
+        "operands": [
+            "calc2640",
+            "agent8901",
+            "loan3456"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "netpro01",
+        "name": "net_proceeds",
+        "value": 369600.0,
+        "operation": "subtraction",
+        "operands": [
+            "sell1234",
+            "total123"
+        ],
+        "is_leaf": false
+    }
+]

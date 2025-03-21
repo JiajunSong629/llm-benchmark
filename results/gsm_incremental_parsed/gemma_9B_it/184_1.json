@@ -1,0 +1,141 @@
+[
+    {
+        "id": "die12345",
+        "name": "die_sides",
+        "value": 20.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "prob1234",
+        "name": "numbers_greater_than_10",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc1234",
+        "name": "probability_greater_than_10",
+        "value": 50.0,
+        "operation": "/",
+        "operands": [
+            "prob1234",
+            "die12345"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "even1234",
+        "name": "even_numbers",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "evenprob1",
+        "name": "probability_one_even",
+        "value": 0.5,
+        "operation": "/",
+        "operands": [
+            "even1234",
+            "die12345"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "left1234",
+        "name": "numbers_left_after_first_roll",
+        "value": 19.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "even5678",
+        "name": "even_numbers_left",
+        "value": 9.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "evenprob2",
+        "name": "probability_second_even",
+        "value": 9.0,
+        "operation": "/",
+        "operands": [
+            "even5678",
+            "left1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "mult5678",
+        "name": "probability_both_events",
+        "value": 9.0,
+        "operation": "*",
+        "operands": [
+            "evenprob1",
+            "evenprob2"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "diff1234",
+        "name": "difference_in_probability",
+        "value": 50.0,
+        "operation": "-",
+        "operands": [
+            "calc1234",
+            "mult5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "conv1234",
+        "name": "convert_9_over_38_to_percentage",
+        "value": 9.0,
+        "operation": "/",
+        "operands": [
+            "evenprob2"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "conv5678",
+        "name": "convert_9_over_38_to_percentage",
+        "value": 23.0,
+        "operation": "*",
+        "operands": [
+            "conv1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "new12345",
+        "name": "percentage_increase",
+        "value": 7.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "perc1234",
+        "name": "percentage_increase",
+        "value": 26.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "deduct12",
+        "name": "new_deduction",
+        "value": 3.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    }
+]

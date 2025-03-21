@@ -1,0 +1,79 @@
+[
+    {
+        "id": "sell1234",
+        "name": "selling_price",
+        "value": 990000.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "legl5678",
+        "name": "legal_fee_rate",
+        "value": 0.03,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "real9012",
+        "name": "realtor_fee_rate",
+        "value": 0.04,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "loan3456",
+        "name": "loan_amount",
+        "value": 230000.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "legf7890",
+        "name": "legal_fees",
+        "value": 29700.0,
+        "operation": "multiply",
+        "operands": [
+            "sell1234",
+            "legl5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "real3456",
+        "name": "realtor_fees",
+        "value": 39600.0,
+        "operation": "multiply",
+        "operands": [
+            "sell1234",
+            "real9012"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "expe1234",
+        "name": "total_expenses",
+        "value": 300300.0,
+        "operation": "add",
+        "operands": [
+            "legf7890",
+            "real3456",
+            "loan3456"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "netp1234",
+        "name": "net_proceeds",
+        "value": 689700.0,
+        "operation": "subtract",
+        "operands": [
+            "sell1234",
+            "expe1234"
+        ],
+        "is_leaf": false
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "question_id": "1021",
+        "original_question": "In a 150-item quiz, 60% of the questions are history, and the rest are equally divided as literature and chemistry questions. If Mia is sure to get 40% of the history questions, and 1/10 of the literature and chemistry questions correctly, how many points is she sure to get?",
+        "randomized_question": "In a 50-item quiz, 10% of the questions are geography, and the rest are equally divided as algebra and chemistry questions. If Kimia is sure to get 60% of the geography questions, and 1/9 of the algebra and chemistry questions correctly, how many points is she sure to get?",
+        "original_answer": "The literature and chemistry questions comprises 100% - 60% = 40% of the quiz.\nThere are 150 questions x 60/100 = 90 history questions.\nThere are a total of 150 questions x 40/100 = 60 literature and chemistry questions.\nIf Mia is sure to get 40% of the history questions, then this means she is sure of her 90 questions x 40/100 = 36 points.\nFrom the literature and chemistry questions, she is sure to get 1/10 of it correctly so that is 60 questions * 1/10 = 6 points.\nThus, she is sure of getting 36 points + 6 points = 42 points in her quiz.\n#### 42",
+        "randomized_answer": "The algebra and chemistry questions comprises 100% - 10% = 90% of the quiz.\nThere are 50 questions x 10/100 = 5 geography questions.\nThere are a total of 50 questions x 90/100 = 45 algebra and chemistry questions.\nIf Kimia is sure to get 60% of the geography questions, then this means she is sure of her 5 questions x 60/100 = 3 points.\nFrom the algebra and chemistry questions, she is sure to get 1/9 of it correctly so that is 45 questions * 1/9 = 5 points.\nThus, she is sure of getting 3 points + 5 points = 8 points in her quiz.\n#### 8",
+        "correct_formula": "(a * (b / 100)) * (c / 100) + ((a * (d / 100)) * (e / 10))",
+        "incorrect_formula": "(a * (b / 100)) * (c / 100) + ((a * (d / 100)) * (e / 9))",
+        "variable_values": {
+            "correct": {
+                "a": 150,
+                "b": 60,
+                "c": 40,
+                "d": 40,
+                "e": 1
+            },
+            "incorrect": {
+                "a": 50,
+                "b": 10,
+                "c": 60,
+                "d": 90,
+                "e": 1
+            }
+        }
+    }
+]

@@ -1,0 +1,67 @@
+[
+    {
+        "id": "sides123",
+        "name": "die_sides",
+        "value": 4.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "prob1234",
+        "name": "numbers_greater_than_2",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "prob5678",
+        "name": "total_numbers",
+        "value": 4.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc9abc",
+        "name": "probability_greater_than_2",
+        "value": 50.0,
+        "operation": "division",
+        "operands": [
+            "prob1234",
+            "prob5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "odd1234",
+        "name": "odd_numbers",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "oddcalc1",
+        "name": "probability_odd_number",
+        "value": 50.0,
+        "operation": "division",
+        "operands": [
+            "odd1234",
+            "prob5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "twodd123",
+        "name": "probability_two_odd_numbers",
+        "value": 25.0,
+        "operation": "multiplication",
+        "operands": [
+            "oddcalc1",
+            "oddcalc1"
+        ],
+        "is_leaf": false
+    }
+]

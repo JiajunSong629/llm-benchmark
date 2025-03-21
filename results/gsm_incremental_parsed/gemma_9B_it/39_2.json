@@ -1,0 +1,127 @@
+[
+    {
+        "id": "skip1234",
+        "name": "skip_speed",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time5678",
+        "name": "total_time",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "runp9012",
+        "name": "run_time_fraction",
+        "value": 0.75,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "walk3456",
+        "name": "walk_time_fraction",
+        "value": 0.25,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "skip1234",
+        "name": "skip_speed",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "runsp567",
+        "name": "run_speed",
+        "value": 25.0,
+        "operation": "multiply",
+        "operands": [
+            "skip1234",
+            "skip1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "walk7890",
+        "name": "walk_speed",
+        "value": 12.0,
+        "operation": "divide",
+        "operands": [
+            "runsp567",
+            "divi1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "divi1234",
+        "name": "division_factor",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "runhrs12",
+        "name": "run_time",
+        "value": 6.0,
+        "operation": "multiply",
+        "operands": [
+            "time5678",
+            "runp9012"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "walkhr12",
+        "name": "walk_time",
+        "value": 2.0,
+        "operation": "multiply",
+        "operands": [
+            "time5678",
+            "walk3456"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "runmil12",
+        "name": "run_miles",
+        "value": 150.0,
+        "operation": "multiply",
+        "operands": [
+            "runsp567",
+            "runhrs12"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "walkmi12",
+        "name": "walk_miles",
+        "value": 25.0,
+        "operation": "multiply",
+        "operands": [
+            "walk7890",
+            "walkhr12"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "totalm12",
+        "name": "total_miles",
+        "value": 175.0,
+        "operation": "add",
+        "operands": [
+            "runmil12",
+            "walkmi12"
+        ],
+        "is_leaf": false
+    }
+]

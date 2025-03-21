@@ -1,0 +1,110 @@
+[
+    {
+        "id": "ratio1234",
+        "name": "sugar_to_water_ratio",
+        "value": 35.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "ratio5678",
+        "name": "water_to_sugar_ratio",
+        "value": 42.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "total7890",
+        "name": "total_volume",
+        "value": 616.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "ratio1234",
+        "name": "sugar_to_water_ratio",
+        "value": 35.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "ratio5678",
+        "name": "water_to_sugar_ratio",
+        "value": 42.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "sum12345",
+        "name": "total_ratio_parts",
+        "value": 77.0,
+        "operation": "add",
+        "operands": [
+            "ratio1234",
+            "ratio5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc1234",
+        "name": "teaspoons_per_ratio_part",
+        "value": 17.0,
+        "operation": "divide",
+        "operands": [
+            "total7890",
+            "ratio1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "teas1234",
+        "name": "teaspoons_per_ratio_part",
+        "value": 6.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc5678",
+        "name": "total_sugar_used",
+        "value": 17.0,
+        "operation": "multiply",
+        "operands": [
+            "calc1234",
+            "ratio1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "step1abc",
+        "name": "teaspoons_per_part",
+        "value": 6.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "step2def",
+        "name": "total_parts",
+        "value": 35.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "step3ghi",
+        "name": "total_teaspoons",
+        "value": 616.0,
+        "operation": "multiply",
+        "operands": [
+            "step1abc",
+            "step2def"
+        ],
+        "is_leaf": false
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "id": "dice1a2b",
+        "name": "dice_sides",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "prob1234",
+        "name": "numbers_greater_than_2",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc5678",
+        "name": "probability_greater_than_2",
+        "value": 0.8,
+        "operation": "division",
+        "operands": [
+            "prob1234",
+            "dice1a2b"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "oddnum12",
+        "name": "odd_numbers",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "oddprob1",
+        "name": "probability_one_odd",
+        "value": 0.5,
+        "operation": "division",
+        "operands": [
+            "oddnum12",
+            "dice1a2b"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "oddnum2a",
+        "name": "odd_numbers_after_first_roll",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "total9b",
+        "name": "total_possibilities_after_first_roll",
+        "value": 9.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "oddprob2",
+        "name": "probability_second_odd",
+        "value": 0.5555555555555556,
+        "operation": "division",
+        "operands": [
+            "oddnum2a",
+            "total9b"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "prob90ab",
+        "name": "probability_both_events",
+        "value": 0.2777777777777778,
+        "operation": "multiplication",
+        "operands": [
+            "oddprob1",
+            "oddprob2"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "deduc1a2",
+        "name": "deduction_percentage",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "diff1a2b",
+        "name": "difference_percentage",
+        "value": 80.0,
+        "operation": "subtraction",
+        "operands": [
+            "calc5678",
+            "prob90ab"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "new8abc",
+        "name": "new_percentage",
+        "value": 52.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "new2per",
+        "name": "new_deduction_percentage",
+        "value": 2.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    }
+]

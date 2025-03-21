@@ -1,0 +1,87 @@
+[
+    {
+        "id": "rooms123",
+        "name": "total_rooms",
+        "value": 180.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "days4567",
+        "name": "total_days",
+        "value": 9.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time7890",
+        "name": "time_per_room",
+        "value": 15.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hours123",
+        "name": "hours_per_day",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "total123",
+        "name": "total_time_cleaning",
+        "value": 2700.0,
+        "operation": "multiply",
+        "operands": [
+            "rooms123",
+            "time7890"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "conv4567",
+        "name": "total_time_hours",
+        "value": 45.0,
+        "operation": "divide",
+        "operands": [
+            "total123"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc1234",
+        "name": "hours_per_day_cleaning",
+        "value": 45.0,
+        "operation": "divide",
+        "operands": [
+            "total_time_hours",
+            "days4567"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "rate5678",
+        "name": "percentage_of_day_cleaning",
+        "value": 1200.0,
+        "operation": "multiply",
+        "operands": [
+            "calc1234",
+            "hours123"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "check123",
+        "name": "check_possible_percentage",
+        "value": 100.0,
+        "operation": "greater_than",
+        "operands": [
+            "rate5678"
+        ],
+        "is_leaf": false
+    }
+]

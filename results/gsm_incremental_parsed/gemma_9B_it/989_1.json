@@ -1,0 +1,105 @@
+[
+    {
+        "id": "peel1234",
+        "name": "peel_rate",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "saute567",
+        "name": "saute_rate",
+        "value": 40.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time8901",
+        "name": "saute_time",
+        "value": 9.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totl2345",
+        "name": "total_onions",
+        "value": 120.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "peel9min",
+        "name": "onions_peeled_in_9_min",
+        "value": 45.0,
+        "operation": "multiply",
+        "operands": [
+            "peel1234",
+            "time8901"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "summ1234",
+        "name": "onions_peeled_and_sauteed_in_9_min",
+        "value": 85.0,
+        "operation": "add",
+        "operands": [
+            "peel9min",
+            "saute567"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "remn1234",
+        "name": "remaining_onions",
+        "value": 35.0,
+        "operation": "subtract",
+        "operands": [
+            "totl2345",
+            "summ1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "remn5678",
+        "name": "remaining_onions",
+        "value": 35.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "peelrate",
+        "name": "peel_rate",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "timecalc",
+        "name": "time_to_peel_remaining",
+        "value": 7.0,
+        "operation": "divide",
+        "operands": [
+            "remn5678",
+            "peelrate"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "totltime",
+        "name": "total_time",
+        "value": 16.0,
+        "operation": "add",
+        "operands": [
+            "time8901",
+            "timecalc"
+        ],
+        "is_leaf": false
+    }
+]

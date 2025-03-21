@@ -1,0 +1,137 @@
+[
+    {
+        "id": "die12345",
+        "name": "die_sides",
+        "value": 20.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "nums1234",
+        "name": "numbers_greater_than_4",
+        "value": 16.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "prob1234",
+        "name": "probability_greater_than_4",
+        "value": 80.0,
+        "operation": "/",
+        "operands": [
+            "nums1234",
+            "die12345"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "even1234",
+        "name": "even_numbers",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "even5678",
+        "name": "probability_one_even",
+        "value": 50.0,
+        "operation": "/",
+        "operands": [
+            "even1234",
+            "die12345"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "evens123",
+        "name": "even_numbers_after_one_even",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "poss1234",
+        "name": "total_possibilities_after_one_even",
+        "value": 19.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "prob5678",
+        "name": "probability_another_even",
+        "value": 10.0,
+        "operation": "/",
+        "operands": [
+            "evens123",
+            "poss1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "both1234",
+        "name": "probability_both_events",
+        "value": 26.0,
+        "operation": "*",
+        "operands": [
+            "even5678",
+            "prob5678"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "diff1234",
+        "name": "difference_in_probability",
+        "value": 3.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "diffabcd",
+        "name": "difference",
+        "value": 80.0,
+        "operation": "-",
+        "operands": [
+            "prob1234",
+            "both1234"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "perc1234",
+        "name": "percentage_difference",
+        "value": 3.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc5678",
+        "name": "difference_calculation",
+        "value": 53.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "perc5678",
+        "name": "percentage_difference",
+        "value": 7.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "perc9abc",
+        "name": "percentage_difference",
+        "value": 7.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    }
+]

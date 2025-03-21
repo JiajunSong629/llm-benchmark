@@ -1,0 +1,113 @@
+[
+    {
+        "id": "rate1abc",
+        "name": "peeling_rate",
+        "value": 6.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "saute2def",
+        "name": "saute_quantity",
+        "value": 40.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time3ghi",
+        "name": "saute_time",
+        "value": 17.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totl4jkl",
+        "name": "total_mushrooms",
+        "value": 120.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "peel5mno",
+        "name": "peeling_time",
+        "value": null,
+        "operation": "divide",
+        "operands": [
+            "totl4jkl",
+            "rate1abc"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "peel5mno",
+        "name": "peeling_time",
+        "value": 20.0,
+        "operation": "divide",
+        "operands": [
+            "totl4jkl",
+            "rate1abc"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "saute2def",
+        "name": "saute_quantity",
+        "value": 40.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time3ghi",
+        "name": "saute_time",
+        "value": 17.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc1234",
+        "name": "saute_ratio",
+        "value": null,
+        "operation": "divide",
+        "operands": [
+            "totl4jkl",
+            "saute2def"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc5678",
+        "name": "saute_time_total",
+        "value": null,
+        "operation": "multiply",
+        "operands": [
+            "calc1234",
+            "time3ghi"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc9abc",
+        "name": "saute_time_total_value",
+        "value": 51.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "final123",
+        "name": "total_time",
+        "value": 71.0,
+        "operation": "add",
+        "operands": [
+            "peel5mno",
+            "calc9abc"
+        ],
+        "is_leaf": false
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "id": "rooms123",
+        "name": "total_rooms",
+        "value": 135.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "days4567",
+        "name": "total_days",
+        "value": 3.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time8901",
+        "name": "time_per_room",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hours2345",
+        "name": "hours_per_day",
+        "value": 15.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totl1234",
+        "name": "total_time_minutes",
+        "value": 1350.0,
+        "operation": "*",
+        "operands": [
+            "rooms123",
+            "time8901"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "conv7890",
+        "name": "total_time_hours",
+        "value": 22.0,
+        "operation": "/",
+        "operands": [
+            "totl1234",
+            "mins4567"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "mins4567",
+        "name": "minutes_per_hour",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hours789",
+        "name": "hours_deduction",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "perc1234",
+        "name": "percentage_of_day",
+        "value": 22.0,
+        "operation": "/",
+        "operands": [
+            "conv7890",
+            "hours2345"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "hrs12345",
+        "name": "hours_deduction",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc1234",
+        "name": "percentage_calculation",
+        "value": 150.0,
+        "operation": "*",
+        "operands": [
+            "hrs12345",
+            "hours2345"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "unfin123",
+        "name": "unfinished_rooms",
+        "value": 135.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    }
+]

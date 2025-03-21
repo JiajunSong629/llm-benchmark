@@ -1,0 +1,75 @@
+[
+    {
+        "id": "peel1a2b",
+        "name": "peeling_rate",
+        "value": 4.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "saute3c4d",
+        "name": "saute_capacity",
+        "value": 30.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time5e6f",
+        "name": "saute_time",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "totl7g8h",
+        "name": "total_carrots",
+        "value": 180.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "peel8m9n",
+        "name": "peeled_carrots_in_8_minutes",
+        "value": 32.0,
+        "operation": "*",
+        "operands": [
+            "peel1a2b",
+            "time5e6f"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "carrot1a",
+        "name": "carrots_to_peel",
+        "value": 148.0,
+        "operation": "-",
+        "operands": [
+            "totl7g8h",
+            "peel8m9n"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "time1a2b",
+        "name": "peeling_time",
+        "value": 37.0,
+        "operation": "/",
+        "operands": [
+            "carrot1a",
+            "peel1a2b"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "total1a",
+        "name": "total_time",
+        "value": 37.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    }
+]

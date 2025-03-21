@@ -1,0 +1,70 @@
+[
+    {
+        "id": "sugar178",
+        "name": "sugar_ratio",
+        "value": 178.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "water29",
+        "name": "water_ratio",
+        "value": 29.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "total1449",
+        "name": "total_quantity",
+        "value": 1449.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "ratio123",
+        "name": "sugar_to_water_ratio",
+        "value": null,
+        "operation": "ratio",
+        "operands": [
+            "sugar178",
+            "water29"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "total207",
+        "name": "total_ratio_parts",
+        "value": 207.0,
+        "operation": "sum",
+        "operands": [
+            "sugar178",
+            "water29"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "frac1234",
+        "name": "sugar_fraction",
+        "value": null,
+        "operation": "division",
+        "operands": [
+            "sugar178",
+            "total207"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc1242",
+        "name": "sugar_used",
+        "value": 1242.0,
+        "operation": "multiplication",
+        "operands": [
+            "total1449",
+            "frac1234"
+        ],
+        "is_leaf": false
+    }
+]

@@ -1,0 +1,117 @@
+[
+    {
+        "id": "flrs1234",
+        "name": "total_floors",
+        "value": 210.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "days5678",
+        "name": "total_days",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "minf9012",
+        "name": "minutes_per_floor",
+        "value": 20.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hrsd3456",
+        "name": "hours_per_day",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time7890",
+        "name": "total_time_minutes",
+        "value": 4200.0,
+        "operation": "*",
+        "operands": [
+            "flrs1234",
+            "minf9012"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "conv1a2b",
+        "name": "total_time_hours",
+        "value": 70.0,
+        "operation": "/",
+        "operands": [
+            "time7890"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "calc1a2b",
+        "name": "total_hours_per_day",
+        "value": 24.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "perc3c4d",
+        "name": "percentage_of_day",
+        "value": 16.0,
+        "operation": "*",
+        "operands": [
+            "conv1a2b",
+            "calc1a2b"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "hrsd8h",
+        "name": "hours_per_day",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "perc9z8x",
+        "name": "percentage_of_day",
+        "value": 16.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hrswk1a2",
+        "name": "hours_per_day",
+        "value": 8.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hrsdy3b4",
+        "name": "hours_per_day",
+        "value": 24.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "percd5c6",
+        "name": "percentage_of_day",
+        "value": 70.0,
+        "operation": "*",
+        "operands": [
+            "hrswk1a2",
+            "hrsdy3b4"
+        ],
+        "is_leaf": false
+    }
+]

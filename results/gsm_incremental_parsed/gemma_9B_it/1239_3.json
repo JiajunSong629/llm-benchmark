@@ -1,0 +1,91 @@
+[
+    {
+        "id": "floors12",
+        "name": "total_floors",
+        "value": 90.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "days3456",
+        "name": "total_days",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "time7890",
+        "name": "time_per_floor",
+        "value": 20.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hoursabc",
+        "name": "hours_per_day",
+        "value": 10.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "total12",
+        "name": "total_time_cleaning",
+        "value": 1800.0,
+        "operation": "multiply",
+        "operands": [
+            "floors12",
+            "time7890"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "hoursdef",
+        "name": "total_time_hours",
+        "value": 30.0,
+        "operation": "divide",
+        "operands": [
+            "total12",
+            "60min"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "60min",
+        "name": "minutes_per_hour",
+        "value": 60.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "hoursday",
+        "name": "hours_per_day",
+        "value": 5.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    },
+    {
+        "id": "calc1234",
+        "name": "percentage_cleaning",
+        "value": 600.0,
+        "operation": "multiply",
+        "operands": [
+            "hoursdef",
+            "hoursday"
+        ],
+        "is_leaf": false
+    },
+    {
+        "id": "imposs12",
+        "name": "impossible_percentage",
+        "value": 100.0,
+        "operation": null,
+        "operands": null,
+        "is_leaf": true
+    }
+]
