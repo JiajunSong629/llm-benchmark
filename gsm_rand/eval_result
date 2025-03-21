@@ -1,0 +1,38 @@
+butcher_sales gemma_9B_it
+Accuracy: 1.00
+Correct by step: {1: 50, 2: 50, 3: 50}
+water_left gemma_9B_it
+Accuracy: 0.90
+Correct by step: {1: 45, 2: 45, 3: 45, 4: 45}
+magician_cards gemma_9B_it
+Accuracy: 0.56
+Correct by step: {1: 1, 2: 12, 3: 50, 4: 50}
+cleaner_work gemma_9B_it
+Accuracy: 0.67
+Correct by step: {1: 1, 2: 50, 3: 50}
+
+butcher_sales llama_3_8B
+Accuracy: 0.76
+Correct by step: {1: 40, 2: 37, 3: 37}
+water_left llama_3_8B
+Accuracy: 0.48
+Correct by step: {1: 13, 2: 17, 3: 23, 4: 44}
+magician_cards llama_3_8B
+Accuracy: 0.61
+Correct by step: {1: 32, 2: 23, 3: 33, 4: 35}
+cleaner_work llama_3_8B
+Accuracy: 0.41
+Correct by step: {1: 9, 2: 24, 3: 28}
+
+butcher_sales gemma_9B
+Accuracy: 1.00
+Correct by step: {1: 50, 2: 50, 3: 50}
+water_left gemma_9B
+Accuracy: 0.90
+Correct by step: {1: 44, 2: 45, 3: 45, 4: 45}
+magician_cards gemma_9B
+Accuracy: 0.52
+Correct by step: {1: 24, 2: 0, 3: 32, 4: 48}
+cleaner_work gemma_9B
+Accuracy: 0.89
+Correct by step: {1: 36, 2: 50, 3: 47}
